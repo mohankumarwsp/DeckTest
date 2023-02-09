@@ -51,7 +51,7 @@ function App({props}) {
 
   useEffect(() => {
     formatData();
-  }, [formatData]);
+  });
 
   return (
     <React.Fragment>
