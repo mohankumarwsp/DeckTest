@@ -59,4 +59,4 @@ jobs:
           package: react.zip
 
       - name: Delete zip file
-         run: rm react.zip
+        run: rm react.zip
