@@ -27,11 +27,14 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
+      - name: Zip all files for upload between jobs
+          run: zip react.zip ./* 
+            
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: react.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +56,7 @@ jobs:
           app-name: 'mohan-asmcia-test'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7281539C1D04F7EA941BF3C5643942C }}
-          package: .
+          package: react.zip
+
+      - name: Delete zip file
+         run: rm react.zip
