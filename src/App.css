@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.deck-tooltip {
+  font-size: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+}
