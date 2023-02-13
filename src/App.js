@@ -22,7 +22,7 @@ function App({props}) {
   async function formatData () {
     debugger;
     let dataArray = []
-    let res = await fetch("http://localhost:3000/Closure_2.geojson");
+    let res = await fetch("https://kind-moss-070cba410.2.azurestaticapps.net/Closure_2.geojson");
     
     const data = await res.json();
     data["features"] && data["features"].forEach(element => {
